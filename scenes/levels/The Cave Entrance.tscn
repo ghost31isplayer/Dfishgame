@@ -1,24 +1,23 @@
-[gd_scene load_steps=24 format=4 uid="uid://crjs20cnr1h2x"]
+[gd_scene load_steps=26 format=4 uid="uid://crjs20cnr1h2x"]
 
-[ext_resource type="Script" path="res://scenes/levels/the_cave_entrance.gd" id="1_6sba3"]
+[ext_resource type="Script" uid="uid://ca0amsexac04b" path="res://scenes/levels/the_cave_entrance.gd" id="1_6sba3"]
 [ext_resource type="PackedScene" uid="uid://dvy50cse08105" path="res://characters/D_salmon/salmon_player.tscn" id="2_lvs8v"]
 [ext_resource type="Texture2D" uid="uid://cv81bhhgbcxxk" path="res://assets/reference_images/Level2_WorldDraft_04.png" id="3_vs43v"]
 [ext_resource type="TileSet" uid="uid://b6aq58nrlftbb" path="res://assets/tile sets/gray_tileset_01.tres" id="4_2dk4g"]
 [ext_resource type="TileSet" uid="uid://cax0px7nnqrrc" path="res://assets/tile sets/grass_tileset_01.tres" id="5_7p02y"]
-[ext_resource type="FontFile" uid="uid://drimirxkyao5u" path="res://assets/fonts/PixelOperator8.ttf" id="6_s5kw3"]
 [ext_resource type="PackedScene" uid="uid://08kc2b2smy51" path="res://scenes/water_bodies/water_body/water_body.tscn" id="7_gtx82"]
 [ext_resource type="PackedScene" uid="uid://dp17i4behyrdh" path="res://scenes/platforms/cave/medium/medium_water_cave_plat_01.tscn" id="8_miotw"]
 [ext_resource type="Texture2D" uid="uid://ir2cdgcnxli3" path="res://assets/plants/Tree_01.png" id="9_pu71o"]
+[ext_resource type="Texture2D" uid="uid://iktienfgq2mt" path="res://assets/objects/Sign_01.png" id="9_u6wus"]
 [ext_resource type="Texture2D" uid="uid://cgldju4nf37ev" path="res://assets/plants/Tree_02.png" id="10_e027g"]
+[ext_resource type="Texture2D" uid="uid://523f3nthi3en" path="res://assets/objects/Sign_02.png" id="10_nn28c"]
 [ext_resource type="PackedScene" uid="uid://62ba11sm364a" path="res://scenes/interactable objects/coin.tscn" id="11_jgydh"]
 [ext_resource type="Texture2D" uid="uid://dg5rpenqi5mx0" path="res://assets/sky boxes/Sky.png" id="12_iug3v"]
-[ext_resource type="Script" path="res://scripts/cloud_scroller.gd" id="13_ih44b"]
+[ext_resource type="Script" uid="uid://bvl4rkv1jokdw" path="res://scripts/cloud_scroller.gd" id="13_ih44b"]
 [ext_resource type="Texture2D" uid="uid://dexjkerd2meka" path="res://assets/sky boxes/Clouds1.png" id="14_4jcfa"]
 [ext_resource type="Texture2D" uid="uid://dgx2wc4u0c2ja" path="res://assets/sky boxes/Tiling_Trees.png" id="15_dnw4j"]
-[ext_resource type="Shader" path="res://shaders/gaussian_blur.gdshader" id="16_h1kxh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl740"]
-size = Vector2(581, 121)
+[ext_resource type="Shader" uid="uid://clsqu5m0acq3t" path="res://shaders/gaussian_blur.gdshader" id="16_h1kxh"]
+[ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="18_u6wus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpfjf"]
 size = Vector2(522, 20)
@@ -33,10 +32,13 @@ size = Vector2(751, 171)
 shader = ExtResource("16_h1kxh")
 shader_parameter/sigma = 3.3
 
-[sub_resource type="Gradient" id="Gradient_2x0f8"]
+[sub_resource type="Gradient" id="Gradient_u6wus"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_dlhxe"]
-gradient = SubResource("Gradient_2x0f8")
+gradient = SubResource("Gradient_u6wus")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl740"]
+size = Vector2(581, 121)
 
 [node name="The_Cave_Entrance" type="Node2D"]
 script = ExtResource("1_6sba3")
@@ -60,25 +62,6 @@ tile_map_data = PackedByteArray("AAAZAOj/AAABAAMAAAAaAOn/AAABAAMAAAAaAOz/AAABAAQ
 tile_set = ExtResource("5_7p02y")
 
 [node name="Water_Container" type="Node" parent="."]
-
-[node name="TheEnd" type="Node2D" parent="Water_Container"]
-position = Vector2(641, -4194)
-
-[node name="Label" type="Label" parent="Water_Container/TheEnd"]
-offset_left = -116.0
-offset_top = 105.0
-offset_right = 423.0
-offset_bottom = 280.0
-theme_override_fonts/font = ExtResource("6_s5kw3")
-theme_override_font_sizes/font_size = 64
-text = "THE END"
-
-[node name="EndArea" type="Area2D" parent="Water_Container/TheEnd"]
-position = Vector2(-1, -30)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Water_Container/TheEnd/EndArea"]
-position = Vector2(73.5, 36.5)
-shape = SubResource("RectangleShape2D_wl740")
 
 [node name="Water_Body" parent="Water_Container" groups=["water"] instance=ExtResource("7_gtx82")]
 position = Vector2(365, -293)
@@ -152,6 +135,24 @@ depth = 50
 position = Vector2(2607, -3495)
 
 [node name="World_Object_Container" type="Node" parent="."]
+
+[node name="Sign01" type="Sprite2D" parent="World_Object_Container"]
+z_index = -1
+position = Vector2(4942, -593)
+rotation = -1.67829
+texture = ExtResource("9_u6wus")
+
+[node name="Sign03" type="Sprite2D" parent="World_Object_Container"]
+z_index = -1
+position = Vector2(3261, -3639)
+rotation = 0.000720564
+texture = ExtResource("9_u6wus")
+flip_h = true
+
+[node name="Sign02" type="Sprite2D" parent="World_Object_Container"]
+z_index = -1
+position = Vector2(399, -447)
+texture = ExtResource("10_nn28c")
 
 [node name="Tree01" type="RigidBody2D" parent="World_Object_Container"]
 z_index = 1
@@ -344,9 +345,31 @@ offset_bottom = -776.0
 scale = Vector2(34.2558, -7.77589)
 color = Color(0.0744152, 0.248214, 0.229551, 1)
 
-[connection signal="body_entered" from="Water_Container/TheEnd/EndArea" to="." method="_on_end_area_body_entered"]
+[node name="TheEnd" type="Node2D" parent="."]
+position = Vector2(641, -4194)
+
+[node name="Label" type="Label" parent="TheEnd"]
+z_index = -1
+offset_left = -66.0
+offset_top = 99.0
+offset_right = 213.0
+offset_bottom = 195.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("18_u6wus")
+theme_override_font_sizes/font_size = 64
+text = "THE END"
+
+[node name="EndArea" type="Area2D" parent="TheEnd"]
+position = Vector2(-1, -30)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheEnd/EndArea"]
+position = Vector2(73.5, 36.5)
+shape = SubResource("RectangleShape2D_wl740")
+
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_01/Area2D" to="." method="checkpoint01"]
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_02/Area2D" to="." method="checkpoint02"]
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_03/Area2D" to="." method="checkpoint03"]
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_04/Area2D" to="." method="checkpoint04"]
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_05/Area2D" to="." method="checkpoint05"]
+[connection signal="body_entered" from="TheEnd/EndArea" to="." method="_on_end_area_body_entered"]

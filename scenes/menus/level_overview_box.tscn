@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://fhf4b4gcm3ay"]
+[gd_scene load_steps=8 format=3 uid="uid://fhf4b4gcm3ay"]
 
-[ext_resource type="Script" path="res://scenes/menus/level_overview_box.gd" id="1_pkm1s"]
+[ext_resource type="Script" uid="uid://g0xwwmhafcxo" path="res://scenes/menus/level_overview_box.gd" id="1_pkm1s"]
 [ext_resource type="Texture2D" uid="uid://cfl86wrtrta8p" path="res://assets/SproutLands Art Pack/Sprite sheet for Basic Pack.png" id="2_gqc8a"]
 [ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="3_w4m7o"]
 [ext_resource type="Texture2D" uid="uid://kwinsc3w6nes" path="res://assets/SproutLands Art Pack/UI Big Play Button.png" id="4_qg1fa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ihcj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l3v2k"]
 texture = ExtResource("4_qg1fa")
@@ -114,6 +116,7 @@ text = "999/999"
 [node name="PlayButton" type="Button" parent="MarginContainer/NinePatchRect/MarginContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0ihcj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_l3v2k")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_l3v2k")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ll4gp")

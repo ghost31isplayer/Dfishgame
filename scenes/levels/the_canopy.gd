@@ -9,6 +9,7 @@ func _ready() -> void:
 	current_checkpoint = $Checkpoint_Container/Spawn
 	# Remove any coins that were previously collected
 	setup_level($Coin_Container)
+	AudioManager.play_music(preload("res://assets/music/CanopyMusic.ogg"))
 
 
 func _on_kill_plane_body_entered(body: Node2D) -> void:

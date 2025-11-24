@@ -18,6 +18,7 @@ var _scene_to_unload : Node
 var _loading_in_progress : bool = false
 
 var current_level_node : Node
+var inCredits : bool = false
 
 ## Connects signals and runs start up commands, like making sure levels.json exists
 func _ready() -> void:
@@ -178,6 +179,9 @@ func load_level_data() -> Dictionary:
 	return {}
 
 func leave_level(level_name: String, complete: bool):
+	if SceneManager.inCredits:
+		return
+	
 	var data = load_level_data()
 	var levels = data.get("levels", [])
 	var collected_this_run = current_level_node.get_collected_coins(current_level_node.get_node("Coin_Container"))
@@ -245,7 +249,7 @@ func load_next_level(current_level_name: String, complete: bool):
 	if get_next_level_path(current_level_name):
 		swap_scenes(get_next_level_path(current_level_name), null, current_level_node, "no_transition")
 	else:
-		swap_scenes("res://scenes/menus/main_menu.tscn", null, current_level_node, "no_transition")
+		swap_scenes("res://scenes/menus/Credits.tscn", null, current_level_node, "no_transition")
 
 
 ## Debug command to reset saved level data

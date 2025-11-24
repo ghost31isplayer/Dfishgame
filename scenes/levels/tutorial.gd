@@ -16,6 +16,7 @@ func _ready() -> void:
 	# Remove any coins that were previously collected
 	setup_level($Coin_Container)
 	Dialogic.signal_event.connect(DialogicSignal)
+	AudioManager.play_music(preload("res://assets/music/TutorialMusic.ogg"))
 
 
 

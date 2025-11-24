@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnsbreyay3frv"]
 
-[ext_resource type="Script" path="res://floatinglogspawner.gd" id="1_8prov"]
+[sub_resource type="Resource" id="Resource_7fbsn"]
+metadata/__load_path__ = "res://floatinglogspawner.gd"
 
 [node name="floatinglogspawner" type="Node2D"]
-script = ExtResource("1_8prov")
+script = SubResource("Resource_7fbsn")
 
 [node name="Timer" type="Timer" parent="."]

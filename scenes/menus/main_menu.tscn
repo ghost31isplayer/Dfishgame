@@ -1,20 +1,22 @@
-[gd_scene load_steps=30 format=4 uid="uid://ceis3jqg5uuvx"]
+[gd_scene load_steps=39 format=4 uid="uid://ceis3jqg5uuvx"]
 
 [ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="1_pis8r"]
-[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_wwwou"]
+[ext_resource type="Script" uid="uid://dvwkky3hdrmdf" path="res://scenes/menus/main_menu.gd" id="1_wwwou"]
 [ext_resource type="Texture2D" uid="uid://cfl86wrtrta8p" path="res://assets/SproutLands Art Pack/Sprite sheet for Basic Pack.png" id="2_kbvgn"]
 [ext_resource type="AudioStream" uid="uid://bkx8pdhsccgcg" path="res://assets/sfx/Select 1.wav" id="3_5qb12"]
-[ext_resource type="AudioStream" uid="uid://2b2eeb610evh" path="res://assets/music/Techno_Funk_01.ogg" id="3_437r3"]
 [ext_resource type="Texture2D" uid="uid://dg5rpenqi5mx0" path="res://assets/sky boxes/Sky.png" id="4_5my0b"]
 [ext_resource type="Texture2D" uid="uid://kwinsc3w6nes" path="res://assets/SproutLands Art Pack/UI Big Play Button.png" id="4_e87xw"]
 [ext_resource type="Texture2D" uid="uid://dgx2wc4u0c2ja" path="res://assets/sky boxes/Tiling_Trees.png" id="5_qyhj2"]
 [ext_resource type="Texture2D" uid="uid://dw2hdmp6ulslr" path="res://icon.png" id="6_l86vd"]
-[ext_resource type="Shader" path="res://shaders/gaussian_blur.gdshader" id="6_ufyot"]
+[ext_resource type="Shader" uid="uid://clsqu5m0acq3t" path="res://shaders/gaussian_blur.gdshader" id="6_ufyot"]
 [ext_resource type="Texture2D" uid="uid://c4f7wq3ajmxmv" path="res://assets/tile sets/Cartoon_Grass_02.png" id="7_xxyoy"]
 [ext_resource type="PackedScene" uid="uid://08kc2b2smy51" path="res://scenes/water_bodies/water_body/water_body.tscn" id="8_7xipv"]
 [ext_resource type="Texture2D" uid="uid://cj3unnxsp77oo" path="res://assets/tile sets/Basic_Shapes_Gray_Tileset.png" id="8_q22qo"]
 [ext_resource type="Texture2D" uid="uid://d113ivic715jn" path="res://assets/tile sets/Cartoon_GroundDecorations_02.png" id="9_xfilq"]
-[ext_resource type="Script" path="res://scripts/volume_slider.gd" id="15_mmqrk"]
+[ext_resource type="Script" uid="uid://3msq6qfqtlw8" path="res://scripts/volume_slider.gd" id="15_mmqrk"]
+[ext_resource type="Texture2D" uid="uid://ckpfwsoe5jvge" path="res://assets/images/Title.png" id="15_uxao6"]
+[ext_resource type="Texture2D" uid="uid://si7oiv5dc385" path="res://assets/SproutLands Art Pack/Dialouge UI/dialog box big.png" id="16_a3hrp"]
+[ext_resource type="Texture2D" uid="uid://u3nvuuhdmc0q" path="res://assets/images/TheDemo2.png" id="17_25m6f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkomg"]
 radius = 6.0
@@ -674,6 +676,8 @@ shader_parameter/sigma = 3.3
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vbyta"]
 gradient = SubResource("Gradient_opm53")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3w8rc"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7b5l"]
 texture = ExtResource("2_kbvgn")
 region_rect = Rect2(275, 211, 90, 26)
@@ -681,6 +685,10 @@ region_rect = Rect2(275, 211, 90, 26)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q7725"]
 texture = ExtResource("2_kbvgn")
 region_rect = Rect2(275, 178, 90, 27)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uxao6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vr0hv"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nwlyg"]
 texture = ExtResource("4_e87xw")
@@ -698,6 +706,74 @@ texture_margin_right = 4.0
 texture_margin_bottom = 6.0
 region_rect = Rect2(3, 2, 90, 27)
 
+[sub_resource type="Animation" id="Animation_vr0hv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.339735, 0.339735)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DialogBoxBig:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.97159, 2.77083)]
+}
+
+[sub_resource type="Animation" id="Animation_uxao6"]
+resource_name = "title_bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.991667, 1.99167),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.339735, 0.339735), Vector2(0.36, 0.36), Vector2(0.339735, 0.339735)]
+}
+
+[sub_resource type="Animation" id="Animation_a3hrp"]
+resource_name = "DemoBounce"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogBoxBig:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.58, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1.97159, 2.77083), Vector2(2, 3), Vector2(1.97159, 2.77083)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a3hrp"]
+_data = {
+&"DemoBounce": SubResource("Animation_a3hrp"),
+&"RESET": SubResource("Animation_vr0hv"),
+&"title_bounce": SubResource("Animation_uxao6")
+}
+
 [node name="Main_Menu" type="Control" node_paths=PackedStringArray("main_menu", "settings_menu")]
 layout_mode = 3
 anchors_preset = 15
@@ -714,12 +790,6 @@ settings_menu = NodePath("Settings_Menu_Container")
 [node name="sfx_click" type="AudioStreamPlayer2D" parent="Audio_Controller"]
 stream = ExtResource("3_5qb12")
 bus = &"sfx"
-
-[node name="menu_bgm" type="AudioStreamPlayer2D" parent="Audio_Controller"]
-stream = ExtResource("3_437r3")
-autoplay = true
-bus = &"music"
-parameters/looping = true
 
 [node name="MouseAnchor" type="StaticBody2D" parent="."]
 
@@ -836,11 +906,12 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_pis8r")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3w8rc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7725")
@@ -851,11 +922,12 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_pis8r")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uxao6")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7725")
@@ -866,11 +938,12 @@ custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("1_pis8r")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vr0hv")
 theme_override_styles/hover = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_j7b5l")
 theme_override_styles/normal = SubResource("StyleBoxTexture_q7725")
@@ -965,8 +1038,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("1_pis8r")
 theme_override_font_sizes/font_size = 32
-text = "Music
-"
+text = "Music"
 
 [node name="HSlider" type="HSlider" parent="Settings_Menu_Container/Settings_Window/MarginContainer/VBoxContainer/Music"]
 custom_minimum_size = Vector2(250, 0)
@@ -1028,6 +1100,36 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_nwlyg")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_nwlyg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_ckbo5")
 text = "Go Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a3hrp")
+}
+autoplay = "title_bounce"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a3hrp")
+}
+autoplay = "DemoBounce"
+
+[node name="Title" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(307, 157)
+rotation = -0.19801
+scale = Vector2(0.339735, 0.339735)
+texture = ExtResource("15_uxao6")
+
+[node name="DialogBoxBig" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(1066, 219)
+scale = Vector2(1.97159, 2.77083)
+texture = ExtResource("16_a3hrp")
+
+[node name="TheDemo2" type="Sprite2D" parent="DialogBoxBig"]
+position = Vector2(1.26807, -0.902252)
+scale = Vector2(0.0960813, 0.0683668)
+texture = ExtResource("17_25m6f")
 
 [connection signal="pressed" from="Main_Menu_Container/Buttons_Window/VBoxContainer/play_btn" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Menu_Container/Buttons_Window/VBoxContainer/settings_btn" to="." method="_on_options_pressed"]

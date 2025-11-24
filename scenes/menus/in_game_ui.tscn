@@ -1,13 +1,15 @@
-[gd_scene load_steps=23 format=3 uid="uid://ctincgfe3f2lc"]
+[gd_scene load_steps=27 format=3 uid="uid://ctincgfe3f2lc"]
 
-[ext_resource type="Script" path="res://scenes/menus/in_game_ui.gd" id="1_k0uri"]
+[ext_resource type="Script" uid="uid://c8cd3t2ch4kl0" path="res://scenes/menus/in_game_ui.gd" id="1_k0uri"]
 [ext_resource type="Texture2D" uid="uid://cfl86wrtrta8p" path="res://assets/SproutLands Art Pack/Sprite sheet for Basic Pack.png" id="1_ktl8f"]
-[ext_resource type="Script" path="res://scenes/menus/pause_menu.gd" id="2_g8iel"]
+[ext_resource type="Script" uid="uid://x1lifn24vkbl" path="res://scenes/menus/pause_menu.gd" id="2_g8iel"]
 [ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="2_s7ggc"]
 [ext_resource type="Texture2D" uid="uid://kwinsc3w6nes" path="res://assets/SproutLands Art Pack/UI Big Play Button.png" id="3_uohvr"]
 [ext_resource type="FontFile" uid="uid://clf3b75neey3j" path="res://assets/fonts/GOODDP__.TTF" id="6_3bj0b"]
-[ext_resource type="Script" path="res://scenes/menus/settings_menu.gd" id="6_oaxbd"]
-[ext_resource type="Script" path="res://scripts/volume_slider.gd" id="7_w2kjx"]
+[ext_resource type="Script" uid="uid://bwnw81xgpno36" path="res://scenes/menus/settings_menu.gd" id="6_oaxbd"]
+[ext_resource type="Script" uid="uid://3msq6qfqtlw8" path="res://scripts/volume_slider.gd" id="7_w2kjx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1bj6v"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7fu3s"]
 texture = ExtResource("3_uohvr")
@@ -21,6 +23,8 @@ region_rect = Rect2(99, 36, 90, 25)
 texture = ExtResource("3_uohvr")
 region_rect = Rect2(3, 34, 90, 27)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_45t00"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v7ykj"]
 texture = ExtResource("1_ktl8f")
 region_rect = Rect2(741, 68, 22, 24)
@@ -33,6 +37,8 @@ region_rect = Rect2(741, 70, 22, 22)
 texture = ExtResource("1_ktl8f")
 region_rect = Rect2(709, 68, 22, 24)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_npr0y"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qyjms"]
 texture = ExtResource("1_ktl8f")
 region_rect = Rect2(869, 228, 22, 24)
@@ -44,6 +50,8 @@ region_rect = Rect2(869, 230, 22, 22)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mvwh"]
 texture = ExtResource("1_ktl8f")
 region_rect = Rect2(837, 228, 22, 24)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qnirp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qlgcd"]
 texture = ExtResource("1_ktl8f")
@@ -143,42 +151,90 @@ layout_mode = 2
 
 [node name="Button_VBox" type="VBoxContainer" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
 
 [node name="PlayButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
-custom_minimum_size = Vector2(120, 60)
+custom_minimum_size = Vector2(175, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1bj6v")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7fu3s")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bycql")
 theme_override_styles/normal = SubResource("StyleBoxTexture_uihld")
 
-[node name="ResetButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_45t00")
 theme_override_styles/hover = SubResource("StyleBoxTexture_v7ykj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_m65ue")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l3ol8")
 
-[node name="SettingsButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+[node name="Unstuck" type="Label" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_s7ggc")
+theme_override_font_sizes/font_size = 28
+text = "Unstuck"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+layout_mode = 2
+
+[node name="SettingsButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer2"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_npr0y")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qyjms")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_gavh1")
 theme_override_styles/normal = SubResource("StyleBoxTexture_6mvwh")
 
-[node name="QuitButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+[node name="Settings" type="Label" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_s7ggc")
+theme_override_font_sizes/font_size = 28
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox"]
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer3"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_qnirp")
 theme_override_styles/hover = SubResource("StyleBoxTexture_qlgcd")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_5r12k")
 theme_override_styles/normal = SubResource("StyleBoxTexture_655i4")
+
+[node name="Quit" type="Label" parent="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0.564706, 0.384314, 0.364706, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_s7ggc")
+theme_override_font_sizes/font_size = 28
+text = "Quit"
+horizontal_alignment = 1
 
 [node name="SettingsMenu_Container" type="MarginContainer" parent="."]
 visible = false
@@ -292,8 +348,7 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("2_s7ggc")
 theme_override_font_sizes/font_size = 32
-text = "Music
-"
+text = "Music"
 
 [node name="HSlider" type="HSlider" parent="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox/Music"]
 custom_minimum_size = Vector2(250, 0)
@@ -331,6 +386,7 @@ script = ExtResource("7_w2kjx")
 bus_name = "sfx"
 
 [node name="Blood" type="HBoxContainer" parent="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox"]
+visible = false
 layout_mode = 2
 
 [node name="SFXLabel2" type="Label" parent="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox/Blood"]
@@ -351,6 +407,7 @@ disabled = true
 button_pressed = true
 
 [node name="ResetLevelDataButton" type="Button" parent="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox"]
+visible = false
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -377,8 +434,8 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_xnpyl")
 text = "Go Back"
 
 [connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/PlayButton" to="PauseMenu_Container" method="_on_play_button_pressed"]
-[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/ResetButton" to="PauseMenu_Container" method="_on_reset_button_pressed"]
-[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/SettingsButton" to="PauseMenu_Container" method="_on_settings_button_pressed"]
-[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/QuitButton" to="PauseMenu_Container" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer/ResetButton" to="PauseMenu_Container" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer2/SettingsButton" to="PauseMenu_Container" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="PauseMenu_Container/PauseMenu/VBoxContainer/NinePatchRect/MarginContainer/Pause_VBox/Button_VBox/HBoxContainer3/QuitButton" to="PauseMenu_Container" method="_on_quit_button_pressed"]
 [connection signal="pressed" from="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox/ResetLevelDataButton" to="SettingsMenu_Container" method="_on_reset_levels_data_button_pressed"]
 [connection signal="pressed" from="SettingsMenu_Container/SettingsMenu/VBoxContainer/MarginContainer/Settings_VBox/MarginContainer/Button_VBox/BackButton" to="SettingsMenu_Container" method="_on_go_back_button_pressed"]
