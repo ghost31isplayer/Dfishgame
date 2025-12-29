@@ -12,7 +12,7 @@ config_version=5
 
 config/name="D Fish Game"
 run/main_scene="res://scenes/menus/main_menu.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="uid://ckpfwsoe5jvge"
 config/icon="uid://bbmitoe8aglvv"
