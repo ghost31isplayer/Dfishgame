@@ -1,7 +1,22 @@
 [gd_scene load_steps=6 format=3 uid="uid://d3gxmaf3xmcci"]
 
-[ext_resource type="Script" path="res://scenes/menus/loading_screen.gd" id="1_ob4hs"]
+[ext_resource type="Script" uid="uid://c25gxvrlb8fpk" path="res://scenes/menus/loading_screen.gd" id="1_ob4hs"]
 [ext_resource type="FontFile" uid="uid://clf3b75neey3j" path="res://assets/fonts/GOODDP__.TTF" id="2_rdxol"]
+
+[sub_resource type="Animation" id="Animation_w5f5e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["LOADING..."]
+}
 
 [sub_resource type="Animation" id="Animation_rvnc1"]
 resource_name = "loading"
@@ -20,25 +35,10 @@ tracks/0/keys = {
 "values": ["LOADING.", "LOADING..", "LOADING..."]
 }
 
-[sub_resource type="Animation" id="Animation_w5f5e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MarginContainer/Label:text")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["LOADING..."]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y30i1"]
 _data = {
-"RESET": SubResource("Animation_w5f5e"),
-"loading": SubResource("Animation_rvnc1")
+&"RESET": SubResource("Animation_w5f5e"),
+&"loading": SubResource("Animation_rvnc1")
 }
 
 [node name="Loading_Screen" type="Control"]

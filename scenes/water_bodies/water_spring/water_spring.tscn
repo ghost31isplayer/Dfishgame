@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bvpuq2qy0vjkx"]
 
-[ext_resource type="Script" path="res://scenes/water_bodies/water_spring/water_spring.gd" id="1_wotr7"]
+[ext_resource type="Script" uid="uid://id0qm65b8ovi" path="res://scenes/water_bodies/water_spring/water_spring.gd" id="1_wotr7"]
 [ext_resource type="Texture2D" uid="uid://cjdhy4sse0f2m" path="res://assets/objects/joint.png" id="2_30y4c"]
 [ext_resource type="PackedScene" uid="uid://bsy3bvdx3yo6g" path="res://scenes/water_bodies/splash_particles/water_splash.tscn" id="3_gjnww"]
 [ext_resource type="AudioStream" uid="uid://btfxhqp18nceh" path="res://assets/sfx/Bubble 1.wav" id="4_k6hn3"]

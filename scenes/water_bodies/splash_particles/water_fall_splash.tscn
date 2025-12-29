@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6ow123huw35b"]
+[gd_scene load_steps=9 format=3 uid="uid://c6ow123huw35b"]
 
 [ext_resource type="Texture2D" uid="uid://cag2udg5belqm" path="res://assets/objects/Water_particle_1.png" id="1_d7wab"]
 
+[sub_resource type="Curve" id="Curve_ar4d3"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveTexture" id="CurveTexture_f386p"]
+curve = SubResource("Curve_ar4d3")
 
 [sub_resource type="Gradient" id="Gradient_42hon"]
 offsets = PackedFloat32Array(0.474576, 1)
@@ -25,6 +31,7 @@ emission_ring_axis = Vector3(0, 0, 1)
 emission_ring_height = 1.0
 emission_ring_radius = 50.0
 emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
 angle_curve = SubResource("CurveTexture_f386p")
 direction = Vector3(-1, -1, 0)
 spread = 60.0

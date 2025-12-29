@@ -1,6 +1,6 @@
-[gd_scene load_steps=40 format=4 uid="uid://2f7xjiyiaipg"]
+[gd_scene load_steps=39 format=4 uid="uid://2f7xjiyiaipg"]
 
-[ext_resource type="Script" path="res://scenes/levels/tutorial.gd" id="1_uwmvn"]
+[ext_resource type="Script" uid="uid://c1gwe6e7mmd1o" path="res://scenes/levels/tutorial.gd" id="1_uwmvn"]
 [ext_resource type="PackedScene" uid="uid://dvy50cse08105" path="res://characters/D_salmon/salmon_player.tscn" id="3_qjvjr"]
 [ext_resource type="TileSet" uid="uid://dajpkigmmhvi2" path="res://assets/tile sets/Ground_Decorations_01.tres" id="4_k52cd"]
 [ext_resource type="TileSet" uid="uid://dc7uviqi0tg3d" path="res://assets/tile sets/cartoon_grass_tileset_01.tres" id="4_wrehl"]
@@ -14,16 +14,15 @@
 [ext_resource type="Texture2D" uid="uid://c4t58tstcd2yy" path="res://assets/plants/Tree_03.png" id="13_2ktqc"]
 [ext_resource type="Texture2D" uid="uid://523f3nthi3en" path="res://assets/objects/Sign_02.png" id="13_kuhuq"]
 [ext_resource type="PackedScene" uid="uid://62ba11sm364a" path="res://scenes/interactable objects/coin.tscn" id="14_4ohbn"]
-[ext_resource type="Script" path="res://scripts/fade_in_and_out_area.gd" id="15_d7fb2"]
+[ext_resource type="Script" uid="uid://bcgx16r2dvk0i" path="res://scripts/fade_in_and_out_area.gd" id="15_d7fb2"]
 [ext_resource type="FontFile" uid="uid://clf3b75neey3j" path="res://assets/fonts/GOODDP__.TTF" id="16_hu6at"]
 [ext_resource type="Texture2D" uid="uid://dg5rpenqi5mx0" path="res://assets/sky boxes/Sky.png" id="17_emulb"]
 [ext_resource type="Texture2D" uid="uid://dgx2wc4u0c2ja" path="res://assets/sky boxes/Tiling_Trees.png" id="18_fk5lp"]
-[ext_resource type="Shader" path="res://shaders/gaussian_blur.gdshader" id="19_x6fjh"]
-[ext_resource type="FontFile" uid="uid://drimirxkyao5u" path="res://assets/fonts/PixelOperator8.ttf" id="20_3q1hk"]
+[ext_resource type="Shader" uid="uid://clsqu5m0acq3t" path="res://shaders/gaussian_blur.gdshader" id="19_x6fjh"]
+[ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="20_6ihvw"]
 [ext_resource type="PackedScene" uid="uid://cucddkqcentrc" path="res://dialogue/Styles/narrator_dialogue_box.tscn" id="21_5rkc3"]
-[ext_resource type="PackedScene" uid="uid://cmjxmqtv3jc8p" path="res://scenes/menus/world_audio_manager.tscn" id="21_ue2m8"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkaxe"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4mf70"]
 texture = ExtResource("6_7k5a6")
 8:0/0 = 0
 9:0/0 = 0
@@ -140,7 +139,7 @@ texture = ExtResource("6_7k5a6")
 19:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qpwe8"]
-sources/0 = SubResource("TileSetAtlasSource_fkaxe")
+sources/0 = SubResource("TileSetAtlasSource_4mf70")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mm1k1"]
 texture = ExtResource("7_67yp1")
@@ -227,7 +226,7 @@ size = Vector2(355.5, 104)
 size = Vector2(368, 130)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li7lu"]
-size = Vector2(567, 304)
+size = Vector2(656, 304)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbiem"]
 size = Vector2(348, 451)
@@ -274,7 +273,7 @@ tile_set = ExtResource("4_k52cd")
 
 [node name="Decorations_Layer_Back" type="TileMapLayer" parent="TileMap_Container"]
 z_index = -1
-tile_map_data = PackedByteArray("AAAjAPb/AQACAAAAAAArAPb/AQAAAAAAAAAsAPb/AQABAAAAAAAxAPb/AQAAAAAAAAAyAPb/AQABAAAAAABZAPv/AQAAAAAAAABaAPv/AQABAAAAAAABAPj/AQAAAAAAAAACAPj/AQABAAAAAAAKAPj/AQACAAAAAAAeAPb/AQACAAAAAAAvAPb/AQACAAAAAABVAPv/AQACAAAAAAAlAPb/AQAFAAEAAAAuAPb/AQAGAAEAAAAgAPb/AQAEAAEAAABbAPv/AQAEAAEAAABKAP3/AQAEAAEAAABQAP3/AQAFAAEAAAAQAP3/AQAEAAEAAAAYAP3/AQAEAAEAAAAGAPj/AQAEAAEAAABSAP3/AQAGAAEAAABgAOz/AQAAAAAAAABhAOz/AQABAAAAAAB0AOz/AQAAAAAAAAB1AOz/AQABAAAAAACGAOz/AQAAAAAAAACHAOz/AQABAAAAAACVAPn/AQAAAAAAAACWAPn/AQABAAAAAAChAPn/AQAAAAAAAACiAPn/AQABAAAAAACpAPn/AQAAAAAAAACqAPn/AQABAAAAAACdAPn/AQACAAAAAACmAPn/AQACAAAAAACDAOz/AQACAAAAAAB5AOz/AQACAAAAAAB+AOz/AQACAAAAAABkAOz/AQACAAAAAACEAOz/AQACAAEAAAB7AOz/AQACAAEAAABxAOz/AQACAAEAAACYAPn/AQACAAEAAACTAPn/AQACAAEAAACoAPn/AQACAAEAAACkAPn/AQACAAEAAACjAPn/AQACAAEAAACfAPn/AQACAAEAAACKAP7/AQAFAAEAAACRAP7/AQAEAAEAAACPAP7/AQADAAEAAACNAP7/AQADAAEAAACOAP7/AQABAAEAAACLAP7/AQABAAEAAABnAPD/AQABAAEAAABuAPD/AQABAAEAAABmAPD/AQAEAAEAAABqAPD/AQAAAAEAAABsAPD/AQAAAAEAAABMAP3/AQAAAAEAAABPAP3/AQADAAEAAABIAP3/AQADAAEAAAA1APr/AQADAAEAAAA5APr/AQADAAEAAAAVAP3/AQADAAEAAAASAP3/AQADAAEAAAA=")
+tile_map_data = PackedByteArray("AAAjAPb/AQACAAAAAAArAPb/AQAAAAAAAAAsAPb/AQABAAAAAAAxAPb/AQAAAAAAAAAyAPb/AQABAAAAAABZAPv/AQAAAAAAAABaAPv/AQABAAAAAAABAPj/AQAAAAAAAAACAPj/AQABAAAAAAAKAPj/AQACAAAAAAAeAPb/AQACAAAAAAAvAPb/AQACAAAAAABVAPv/AQACAAAAAAAlAPb/AQAFAAEAAAAgAPb/AQAEAAEAAABbAPv/AQAEAAEAAABKAP3/AQAEAAEAAABQAP3/AQAFAAEAAAAQAP3/AQAEAAEAAAAYAP3/AQAEAAEAAAAGAPj/AQAEAAEAAABgAOz/AQAAAAAAAABhAOz/AQABAAAAAAB0AOz/AQAAAAAAAAB1AOz/AQABAAAAAACGAOz/AQAAAAAAAACHAOz/AQABAAAAAACVAPn/AQAAAAAAAACWAPn/AQABAAAAAAChAPn/AQAAAAAAAACiAPn/AQABAAAAAACpAPn/AQAAAAAAAACqAPn/AQABAAAAAACdAPn/AQACAAAAAACmAPn/AQACAAAAAACDAOz/AQACAAAAAAB5AOz/AQACAAAAAAB+AOz/AQACAAAAAABkAOz/AQACAAAAAACEAOz/AQACAAEAAAB7AOz/AQACAAEAAABxAOz/AQACAAEAAACYAPn/AQACAAEAAACTAPn/AQACAAEAAACoAPn/AQACAAEAAACkAPn/AQACAAEAAACjAPn/AQACAAEAAACfAPn/AQACAAEAAACKAP7/AQAFAAEAAACRAP7/AQAEAAEAAACPAP7/AQADAAEAAACNAP7/AQADAAEAAACOAP7/AQABAAEAAACLAP7/AQABAAEAAABnAPD/AQABAAEAAABuAPD/AQABAAEAAABmAPD/AQAEAAEAAABqAPD/AQAAAAEAAABsAPD/AQAAAAEAAABMAP3/AQAAAAEAAABPAP3/AQADAAEAAABIAP3/AQADAAEAAAA1APr/AQADAAEAAAA5APr/AQADAAEAAAAVAP3/AQADAAEAAAASAP3/AQADAAEAAABSAP3/AQADAAEAAABTAP3/AQABAAEAAAA=")
 tile_set = ExtResource("4_k52cd")
 
 [node name="GrayShapes_Layer" type="TileMapLayer" parent="TileMap_Container"]
@@ -367,6 +366,11 @@ z_index = -1
 position = Vector2(434, -297)
 texture = ExtResource("12_tkshe")
 
+[node name="Sign03" type="Sprite2D" parent="Objects_Container"]
+z_index = -1
+position = Vector2(4854, -259)
+texture = ExtResource("12_tkshe")
+
 [node name="Sign02" type="Sprite2D" parent="Objects_Container"]
 z_index = -1
 position = Vector2(2294, -338)
@@ -394,40 +398,40 @@ position = Vector2(4114, -1315)
 
 [node name="Labels_Container" type="Node" parent="."]
 
-[node name="Rock_Text" type="Area2D" parent="Labels_Container"]
+[node name="GoodLuck" type="Area2D" parent="Labels_Container"]
 script = ExtResource("15_d7fb2")
 
-[node name="Labels" type="Node2D" parent="Labels_Container/Rock_Text"]
+[node name="Labels" type="Node2D" parent="Labels_Container/GoodLuck"]
 
-[node name="Rock" type="Label" parent="Labels_Container/Rock_Text/Labels"]
-offset_left = 1227.0
-offset_top = -491.0
-offset_right = 1395.0
-offset_bottom = -442.0
+[node name="Good Luck" type="Label" parent="Labels_Container/GoodLuck/Labels"]
+offset_left = 1155.0
+offset_top = -451.0
+offset_right = 1333.0
+offset_bottom = -402.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("16_hu6at")
 theme_override_font_sizes/font_size = 48
-text = "Rock"
+text = "Good luck!"
 horizontal_alignment = 1
 vertical_alignment = 1
 uppercase = true
 
-[node name="Phallic" type="Label" parent="Labels_Container/Rock_Text/Labels"]
-offset_left = 1225.0
-offset_top = -444.0
-offset_right = 1391.0
-offset_bottom = -411.0
+[node name="Sharp" type="Label" parent="Labels_Container/GoodLuck/Labels"]
+offset_left = 1157.0
+offset_top = -405.0
+offset_right = 1323.0
+offset_bottom = -372.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("16_hu6at")
 theme_override_font_sizes/font_size = 28
-text = "(phallic)"
+text = "(You'll need it...)"
 horizontal_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels_Container/Rock_Text"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels_Container/GoodLuck"]
 visible = false
-position = Vector2(1307.5, -383)
+position = Vector2(1263, -383)
 shape = SubResource("RectangleShape2D_li7lu")
 
 [node name="Spikes_Text" type="Area2D" parent="Labels_Container"]
@@ -468,35 +472,35 @@ visible = false
 position = Vector2(2109, -297.5)
 shape = SubResource("RectangleShape2D_rbiem")
 
-[node name="Viagra_Text" type="Area2D" parent="Labels_Container"]
+[node name="Coin_Text" type="Area2D" parent="Labels_Container"]
 script = ExtResource("15_d7fb2")
 
-[node name="Labels" type="Node2D" parent="Labels_Container/Viagra_Text"]
+[node name="Labels" type="Node2D" parent="Labels_Container/Coin_Text"]
 
-[node name="Fish Viagra" type="Label" parent="Labels_Container/Viagra_Text/Labels"]
-offset_left = 2791.0
-offset_top = -735.0
-offset_right = 2959.0
-offset_bottom = -686.0
+[node name="Collectibles" type="Label" parent="Labels_Container/Coin_Text/Labels"]
+offset_left = 2776.0
+offset_top = -731.0
+offset_right = 3015.0
+offset_bottom = -682.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("16_hu6at")
 theme_override_font_sizes/font_size = 48
-text = "Fish Viagra"
+text = "collectables"
 uppercase = true
 
-[node name="You\'ll need this" type="Label" parent="Labels_Container/Viagra_Text/Labels"]
-offset_left = 2801.0
-offset_top = -688.0
-offset_right = 2967.0
-offset_bottom = -655.0
+[node name="Oh Shiny" type="Label" parent="Labels_Container/Coin_Text/Labels"]
+offset_left = 2835.0
+offset_top = -686.0
+offset_right = 3001.0
+offset_bottom = -653.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("16_hu6at")
 theme_override_font_sizes/font_size = 28
-text = "(you'll need this)"
+text = "(ohhh shiny!)"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels_Container/Viagra_Text"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Labels_Container/Coin_Text"]
 visible = false
 position = Vector2(2831.5, -597.5)
 shape = SubResource("RectangleShape2D_gt5n1")
@@ -554,13 +558,14 @@ shape = SubResource("WorldBoundaryShape2D_md786")
 position = Vector2(5205, -296)
 
 [node name="Label" type="Label" parent="TheEnd"]
-offset_left = -111.0
-offset_top = 8.0
-offset_right = 428.0
-offset_bottom = 183.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("20_3q1hk")
+z_index = -1
+offset_left = -47.0
+offset_top = 2.0
+offset_right = 223.0
+offset_bottom = 80.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("20_6ihvw")
 theme_override_font_sizes/font_size = 64
 text = "THE END"
 
@@ -585,9 +590,6 @@ shape = SubResource("RectangleShape2D_287yl")
 [node name="Dialogue_Container" type="CanvasLayer" parent="Dialogue_Manager"]
 
 [node name="Narrator_Dialogue_Box" parent="Dialogue_Manager/Dialogue_Container" instance=ExtResource("21_5rkc3")]
-
-[node name="WorldAudioManager" parent="." instance=ExtResource("21_ue2m8")]
-script = null
 
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_01/Area2D" to="." method="_on_checkpoint_01_entered"]
 [connection signal="body_entered" from="Checkpoint_Container/Checkpoint_02/Area2D" to="." method="_on_checkpoint_02_entered"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=4 uid="uid://b2evws6j3ucjt"]
+[gd_scene load_steps=24 format=4 uid="uid://b2evws6j3ucjt"]
 
-[ext_resource type="Script" path="res://scenes/menus/level_select.gd" id="1_7upal"]
+[ext_resource type="Script" uid="uid://qtompi8ujiyf" path="res://scenes/menus/level_select.gd" id="1_7upal"]
 [ext_resource type="Texture2D" uid="uid://cikulo7vbnp5o" path="res://assets/icons/back-arrow.png" id="2_273rj"]
 [ext_resource type="Texture2D" uid="uid://c4f7wq3ajmxmv" path="res://assets/tile sets/Cartoon_Grass_02.png" id="2_d01mt"]
 [ext_resource type="AudioStream" uid="uid://bkx8pdhsccgcg" path="res://assets/sfx/Select 1.wav" id="2_lf0au"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://08kc2b2smy51" path="res://scenes/water_bodies/water_body/water_body.tscn" id="5_yietr"]
 [ext_resource type="Texture2D" uid="uid://dg5rpenqi5mx0" path="res://assets/sky boxes/Sky.png" id="6_pw0u8"]
 [ext_resource type="Texture2D" uid="uid://dgx2wc4u0c2ja" path="res://assets/sky boxes/Tiling_Trees.png" id="7_5w8h2"]
-[ext_resource type="Shader" path="res://shaders/gaussian_blur.gdshader" id="8_7ddqr"]
+[ext_resource type="Shader" uid="uid://clsqu5m0acq3t" path="res://shaders/gaussian_blur.gdshader" id="8_7ddqr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1b8wt"]
 radius = 6.0
@@ -671,6 +671,8 @@ shader_parameter/sigma = 3.3
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_706sx"]
 gradient = SubResource("Gradient_q7id6")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xl4el"]
+
 [node name="Level_Select" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -779,6 +781,7 @@ theme_override_constants/separation = 350
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xl4el")
 icon = ExtResource("2_273rj")
 
 [node name="Level Select Screen" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]

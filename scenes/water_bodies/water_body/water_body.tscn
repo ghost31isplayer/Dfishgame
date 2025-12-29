@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://08kc2b2smy51"]
 
-[ext_resource type="Script" path="res://scenes/water_bodies/water_body/water_body.gd" id="1_7q06q"]
-[ext_resource type="Script" path="res://scripts/smooth_path_modified.gd" id="2_iea03"]
-[ext_resource type="Shader" path="res://shaders/water_distortion.gdshader" id="2_xyuwr"]
+[ext_resource type="Script" uid="uid://dujv7sbmgv2oy" path="res://scenes/water_bodies/water_body/water_body.gd" id="1_7q06q"]
+[ext_resource type="Script" uid="uid://cshs4bvjeskjc" path="res://scripts/smooth_path_modified.gd" id="2_iea03"]
+[ext_resource type="Shader" uid="uid://dk8apgwcfqevl" path="res://shaders/water_distortion.gdshader" id="2_xyuwr"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_2qctf"]
 
@@ -11,11 +11,11 @@ noise = SubResource("FastNoiseLite_2qctf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qimhn"]
 shader = ExtResource("2_xyuwr")
+shader_parameter/refraction_map = SubResource("NoiseTexture2D_t838d")
 shader_parameter/refraction_stretch = Vector2(1, 1)
 shader_parameter/refraction_strength = 0.02
 shader_parameter/water_tint = Color(0.2, 0.6, 1, 0.1)
 shader_parameter/speed = 0.1
-shader_parameter/refraction_map = SubResource("NoiseTexture2D_t838d")
 
 [sub_resource type="Curve2D" id="Curve2D_e6yux"]
 

@@ -14,6 +14,7 @@ func _ready() -> void:
 	current_checkpoint = $Checkpoint_Container/Spawn
 	# Set up level coins
 	call_deferred("setup_level", $Coin_Container)
+	AudioManager.play_music(preload("res://assets/music/RiverMusic.ogg"))
 
 func _on_end_area_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:

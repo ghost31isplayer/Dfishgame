@@ -1,15 +1,15 @@
 [gd_scene load_steps=18 format=3 uid="uid://dvy50cse08105"]
 
-[ext_resource type="Script" path="res://characters/D_salmon/salmon_player.gd" id="1_bf82l"]
+[ext_resource type="Script" uid="uid://dc04e7nkm07rs" path="res://characters/D_salmon/salmon_player.gd" id="1_bf82l"]
 [ext_resource type="PackedScene" uid="uid://bsw0dll58iomy" path="res://scenes/particles/blood/blood_drop.tscn" id="2_odigk"]
 [ext_resource type="PackedScene" uid="uid://cd6qy54iqpe3c" path="res://scenes/particles/blood/blood_splatter.tscn" id="3_5caw1"]
-[ext_resource type="Script" path="res://characters/D_salmon/player_state.gd" id="3_lknue"]
+[ext_resource type="Script" uid="uid://y4pevqe2ry0a" path="res://characters/D_salmon/player_state.gd" id="3_lknue"]
 [ext_resource type="Texture2D" uid="uid://cmieovged6ujm" path="res://characters/D_salmon/salmon_1_swimming.png" id="3_wmpru"]
-[ext_resource type="Script" path="res://characters/D_salmon/swimming.gd" id="4_57cug"]
-[ext_resource type="Script" path="res://characters/D_salmon/flopping.gd" id="5_e5lup"]
-[ext_resource type="Script" path="res://characters/D_salmon/dead.gd" id="6_q07fi"]
+[ext_resource type="Script" uid="uid://1dt5phspbrka" path="res://characters/D_salmon/swimming.gd" id="4_57cug"]
+[ext_resource type="Script" uid="uid://b0bigj0ea1jp3" path="res://characters/D_salmon/flopping.gd" id="5_e5lup"]
+[ext_resource type="Script" uid="uid://b5vka6r4p5ad1" path="res://characters/D_salmon/dead.gd" id="6_q07fi"]
 [ext_resource type="PackedScene" uid="uid://ctincgfe3f2lc" path="res://scenes/menus/in_game_ui.tscn" id="7_nf6s4"]
-[ext_resource type="Script" path="res://characters/D_salmon/dry_out_overlay.gd" id="7_ttsac"]
+[ext_resource type="Script" uid="uid://dgrxvy5df30lf" path="res://characters/D_salmon/dry_out_overlay.gd" id="7_ttsac"]
 [ext_resource type="AudioStream" uid="uid://dhnf6rwkctwm4" path="res://assets/sfx/wet_02.mp3" id="9_vlvbj"]
 [ext_resource type="AudioStream" uid="uid://dra2or65x4rqj" path="res://assets/sfx/wet_03.mp3" id="12_ijpfe"]
 
@@ -56,8 +56,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pic8k"]
 _data = {
-"RESET": SubResource("Animation_eosye"),
-"swimming": SubResource("Animation_40pyh")
+&"RESET": SubResource("Animation_eosye"),
+&"swimming": SubResource("Animation_40pyh")
 }
 
 [node name="D_Salmon" type="CharacterBody2D" groups=["player"]]
@@ -135,7 +135,7 @@ stream = ExtResource("12_ijpfe")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pic8k")
+&"": SubResource("AnimationLibrary_pic8k")
 }
 
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

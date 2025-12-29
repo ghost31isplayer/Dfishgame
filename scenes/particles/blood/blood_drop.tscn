@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsw0dll58iomy"]
 
-[ext_resource type="Script" path="res://scenes/particles/blood/blood_drop.gd" id="1_vrkf0"]
+[ext_resource type="Script" uid="uid://b7nxwi7caq4l4" path="res://scenes/particles/blood/blood_drop.gd" id="1_vrkf0"]
 [ext_resource type="Texture2D" uid="uid://df8ev7f0lyv28" path="res://scenes/particles/blood/Blood_Drop.png" id="2_cko0g"]
 
 [node name="Blood_Drop" type="Node2D"]

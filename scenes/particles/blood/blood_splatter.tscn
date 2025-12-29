@@ -3,8 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://df8ev7f0lyv28" path="res://scenes/particles/blood/Blood_Drop.png" id="1_c73t6"]
 
 [sub_resource type="Curve" id="Curve_atnj4"]
-min_value = -360.0
-max_value = 360.0
+_limits = [-360.0, 360.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 

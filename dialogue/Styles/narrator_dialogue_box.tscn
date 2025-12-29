@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cucddkqcentrc"]
 
-[ext_resource type="Script" path="res://dialogue/Styles/narrator_dialogue_box.gd" id="1_b58a5"]
+[ext_resource type="Script" uid="uid://bklovoyss4qvt" path="res://dialogue/Styles/narrator_dialogue_box.gd" id="1_b58a5"]
 [ext_resource type="Texture2D" uid="uid://cfl86wrtrta8p" path="res://assets/SproutLands Art Pack/Sprite sheet for Basic Pack.png" id="2_2d7ca"]
 [ext_resource type="FontFile" uid="uid://0hcmt3kv7m6g" path="res://assets/fonts/BadComic-Regular.ttf" id="3_638yr"]
 

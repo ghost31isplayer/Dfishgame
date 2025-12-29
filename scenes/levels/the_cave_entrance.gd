@@ -10,10 +10,8 @@ func _ready() -> void:
 	current_checkpoint = $Checkpoint_Container/Spawn
 	# Set up level coins
 	call_deferred("setup_level", $Coin_Container)
+	AudioManager.play_music(preload("res://assets/music/CaveMusic.ogg"))
 
-
-func _process(delta: float) -> void:
-	pass
 
 ## Level Transition Trigger
 func _on_end_area_body_entered(body: Node2D) -> void:

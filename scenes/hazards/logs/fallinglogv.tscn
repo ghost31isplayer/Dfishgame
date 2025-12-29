@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dltj2didxmysb"]
 
-[ext_resource type="Script" path="res://scenes/hazards/logs/fallinglogv.gd" id="1_vtur6"]
+[ext_resource type="Script" uid="uid://bvgncu30ytsnl" path="res://scenes/hazards/logs/fallinglogv.gd" id="1_vtur6"]
 [ext_resource type="Texture2D" uid="uid://dxjv187y4n26p" path="res://scenes/hazards/logs/fallinglogvert.png" id="2_h2dnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic0bk"]

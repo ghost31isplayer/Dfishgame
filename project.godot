@@ -10,16 +10,19 @@ config_version=5
 
 [application]
 
-config/name="DFishGame"
+config/name="D Fish Game"
 run/main_scene="res://scenes/menus/main_menu.tscn"
-config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.png"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://ckpfwsoe5jvge"
+config/icon="uid://bbmitoe8aglvv"
 
 [autoload]
 
 SceneManager="*res://scripts/Globals/Scene_Manager.gd"
 AudioGlobal="*res://scripts/Globals/Audio_Global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+AudioManager="*res://scripts/Globals/MusicManager.gd"
 
 [dialogic]
 
@@ -60,7 +63,6 @@ glossary/default_case_sensitive=true
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="viewport"
-window/stretch/aspect="expand"
 
 [editor_plugins]
 
